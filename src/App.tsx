@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { Box, Layers, Share2 } from 'lucide-react';
+import { Box, Layers } from 'lucide-react';
 import { InspectorPanel } from './components/InspectorPanel';
-import { ShareModal } from './components/ShareModal';
 import { UploadModal } from './components/UploadModal';
 import { ViewerControls } from './components/ViewerControls';
 import { Viewport3D } from './components/Viewport3D';
@@ -28,12 +27,6 @@ export const App: React.FC = () => {
   const [selectedRoomId, setSelectedRoomId] = useState<string | null>(null);
   const [isInspectorOpen, setIsInspectorOpen] = useState<boolean>(true);
   const [isUploadOpen, setIsUploadOpen] = useState<boolean>(false);
-  const [isShareOpen, setIsShareOpen] = useState<boolean>(false);
-  const [publicUrl] = useState<string>(
-    window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-      ? 'https://nails-neighbor-fundamental-treating.trycloudflare.com'
-      : window.location.href
-  );
 
   const sceneManagerRef = useRef<HouseSceneManager | null>(null);
 
@@ -142,17 +135,8 @@ export const App: React.FC = () => {
 
           <button
             className="btn-action primary"
-            onClick={() => setIsShareOpen(true)}
-            style={{ fontWeight: 600, padding: '0.45rem 0.95rem' }}
-            title="Generar enlace público y QR para el cliente"
-          >
-            <Share2 size={15} className="icon-mr" />
-            Compartir con Cliente
-          </button>
-
-          <button
-            className="btn-header-secondary"
             onClick={() => setIsUploadOpen(true)}
+            style={{ fontWeight: 600, padding: '0.45rem 0.95rem' }}
             title="Subir fotos del cliente o nuevo plano"
           >
             <Layers size={15} className="icon-mr" />
@@ -209,13 +193,6 @@ export const App: React.FC = () => {
           setSelectedFurniture(null);
           setSelectedRoomId(null);
         }}
-      />
-
-      {/* MODAL PARA COMPARTIR ENLACE Y QR */}
-      <ShareModal
-        isOpen={isShareOpen}
-        onClose={() => setIsShareOpen(false)}
-        publicUrl={publicUrl}
       />
     </div>
   );

@@ -32,22 +32,29 @@
 
 ---
 
-## 🚀 Inicio Rápido
+## 🚀 Cómo Correr el Proyecto Localmente en tu PC
 
 ### Requisitos Previos
-- Node.js 18+ instalado.
+- [Node.js](https://nodejs.org/) (versión 18 o superior) instalado.
+- [Git](https://git-scm.com/) instalado.
 
-### Instalación y Ejecución
+### Paso a Paso para el Cliente
 
 ```bash
-# 1. Instalar dependencias
+# 1. Clonar el repositorio
+git clone https://github.com/nullpointlol/photo23dfloorplan.git
+
+# 2. Entrar a la carpeta del proyecto
+cd photo23dfloorplan
+
+# 3. Instalar dependencias
 npm install
 
-# 2. Iniciar servidor de desarrollo
+# 4. Iniciar la aplicación
 npm run dev
 ```
 
-Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
+Abre en tu navegador web: **[http://localhost:5173](http://localhost:5173)**. ¡Listo! La maqueta 3D del taller se renderizará automáticamente a escala real en tu equipo.
 
 ---
 

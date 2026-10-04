@@ -13,7 +13,6 @@ dist-ssr
 *.local
 .env
 .env.*
-cloudflared.exe
 
 # Editor directories and files
 .vscode/*
